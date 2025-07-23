@@ -81,7 +81,10 @@
     this.classList.toggle("bi-list");
     this.classList.toggle("bi-x");
   });
-
+  on("click", ".alert", function (e) {
+    select("#navbar").classList.toggle("navbar-mobile");
+    alert("Hello");
+  });
   /**
    * Mobile nav dropdowns activate
    */

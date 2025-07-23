@@ -42,7 +42,30 @@
           <!-- Toggle icon for mobile -->
           <i class="bi bi-list mobile-nav-toggle" id="navToggle"></i>
         </nav>
-        <button class="navbar-button">Login</button>
+        <button class="navbar-button" onclick="openForm()">Login</button>
+        <div class="form-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+            <label for="email"><b>Email</b></label>
+            <input
+              type="text"
+              placeholder="Enter Email"
+              name="email"
+              required
+            />
+            <label for="password"><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              required
+            />
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">
+              Close
+            </button>
+          </form>
+        </div>
       </div>
     </header>
 
@@ -151,6 +174,7 @@
         </div>
       </section>
       <!-- Banner Section -->
+      <!-- Button trigger modal -->
 
       <section class="container pt-5">
         <div class="container">
@@ -427,8 +451,32 @@
             <!-- Residency Status -->
             <div class="mb-4">
               <label class="form-label">Residency status</label><br />
-
-              <div class="buttonToggle col-12 col-md-12 col-lg-7 col-xl-5">
+              <div
+                class="col-12 d-flex justify-content-start toggle-btns gap-2 p-0"
+              >
+                <div
+                  class="buttonToggle"
+                  style="
+                    border: 1px solid #cfcfcf;
+                    border-radius: 11px;
+                    background-color: #f7f7f7;
+                  "
+                >
+                  <button
+                    class="btn-status active-btn"
+                    onclick="setResidency(this)"
+                  >
+                    UAE national
+                  </button>
+                  <button class="btn-status" onclick="setResidency(this)">
+                    UAE resident
+                  </button>
+                  <button class="btn-status" onclick="setResidency(this)">
+                    Non-resident
+                  </button>
+                </div>
+              </div>
+              <!-- <div class="buttonToggle col-12 col-md-12 col-lg-7 col-xl-5">
                 <button
                   class="btn-status active-btn"
                   onclick="setResidency(this)"
@@ -441,7 +489,7 @@
                 <button class="btn-status" onclick="setResidency(this)">
                   Non-resident
                 </button>
-              </div>
+              </div> -->
             </div>
 
             <!-- Down Payment -->
@@ -652,6 +700,14 @@
       });
       downPayment.addEventListener("input", updateValues);
       loanPeriod.addEventListener("input", updateValues);
+    </script>
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
     </script>
   </body>
 </html>
