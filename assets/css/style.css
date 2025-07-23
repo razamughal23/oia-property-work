@@ -585,6 +585,18 @@ a:hover {
   border-radius: 0 50px 50px 0;
   padding: 0 25px;
 }
+.btn-search:hover {
+  background-color: #e53935;
+}
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  background-color: #e53935;
+  /* color: black; */
+  border: none;
+}
 
 .form-control::placeholder {
   color: #999;
