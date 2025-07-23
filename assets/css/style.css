@@ -737,6 +737,8 @@ a:hover {
   .buttonToggle {
     width: 100%;
   }
+}
+@media (max-width: 1440px) {
   .btn-status {
     padding: 8px;
   }
