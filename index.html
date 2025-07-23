@@ -184,7 +184,7 @@
                                 1,234,000 AED/year
                               </h5>
                             </div>
-                            <div>
+                            <div class="mt-3 mb-3">
                               <h6 style="font-size: 16px">
                                 Maybe this will be your next home
                               </h6>
@@ -523,7 +523,9 @@
                   </h5>
                 </div>
                 <div class="col-12">
-                  <h4 style="color: #000; font-family: bold">3.75%</h4>
+                  <h4 style="color: #000; font-family: bold" id="interestRate">
+                    4.25%
+                  </h4>
                 </div>
               </div>
             </div>
@@ -594,8 +596,10 @@
       const purchasePriceInput = document.getElementById("purchasePriceInput");
       const downPaymentInput = document.getElementById("downPaymentInput");
       const downPaymentPercent = document.getElementById("downPaymentPercent");
+      const interestRate = document.getElementById("interestRate");
       const loanPeriodInput = document.getElementById("loanPeriodInput");
       let selectedResidencyPercent = 15; // default UAE national
+      let selectedinterestrate = 4.24; // default UAE national
       function formatNumber(num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
@@ -612,6 +616,7 @@
       function updateValues() {
         purchasePriceInput.value = formatNumber(purchasePrice.value);
         downPaymentInput.value = formatNumber(downPayment.value);
+        interestRate.innerText = selectedinterestrate + "%";
         downPaymentPercent.innerText =
           Math.round((downPayment.value / purchasePrice.value) * 100) + "%";
         loanPeriodInput.value =
@@ -626,10 +631,13 @@
         // Update % based on residency
         if (label === "UAE national") {
           selectedResidencyPercent = 15;
+          selectedinterestrate = 4.24;
         } else if (label === "UAE resident") {
           selectedResidencyPercent = 20;
+          selectedinterestrate = 3.75;
         } else if (label === "Non-resident") {
           selectedResidencyPercent = 40;
+          selectedinterestrate = 4.19;
         }
         updateDownPaymentRange();
         updateValues();
