@@ -649,6 +649,7 @@ a:hover {
   color: #001f5c;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .card-heart {
   background-color: transparent;
