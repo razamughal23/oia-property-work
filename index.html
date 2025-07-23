@@ -400,18 +400,18 @@
           <div class="col-12 mb-4">
             <h1 class="section3-heading">Get the right morgage for you</h1>
           </div>
-          <div class="col-12 col-md-6 col-lg-7 col-xl-8">
+          <div class="col-12 col-md-6 col-lg-8 col-xl-8">
             <div class="mb-4">
               <label class="form-label">Purchase price</label>
               <input
                 type="text"
                 id="purchasePriceInput"
-                class="form-control mb-1"
+                class="form-control border slider-input"
                 readonly
               />
               <input
                 type="range"
-                class="form-range range-slider"
+                class="form-range range-slider custom-slider"
                 id="purchasePrice"
                 min="300000"
                 max="20000000"
@@ -448,7 +448,8 @@
             <div class="mb-4">
               <label class="form-label">Down payment</label>
               <div
-                class="d-flex justify-content-between align-items-center mb-1"
+                class="d-flex justify-content-between align-items-center slider-input border"
+                style="border-radius: 8px"
               >
                 <input
                   type="text"
@@ -456,13 +457,13 @@
                   class="form-control"
                   readonly
                 />
-                <span id="downPaymentPercent" class="ms-2 text-primary fw-bold"
+                <span id="downPaymentPercent" class="me-2 text-primary fw-bold"
                   >15%</span
                 >
               </div>
               <input
                 type="range"
-                class="form-range range-slider"
+                class="form-range range-slider custom-slider"
                 id="downPayment"
                 min="45000"
                 max="240000"
@@ -481,12 +482,12 @@
               <input
                 type="text"
                 id="loanPeriodInput"
-                class="form-control mb-1"
+                class="form-control border slider-input"
                 readonly
               />
               <input
                 type="range"
-                class="form-range range-slider"
+                class="form-range range-slider custom-slider"
                 id="loanPeriod"
                 min="1"
                 max="25"
@@ -628,7 +629,7 @@
         } else if (label === "UAE resident") {
           selectedResidencyPercent = 20;
         } else if (label === "Non-resident") {
-          selectedResidencyPercent = 25;
+          selectedResidencyPercent = 40;
         }
         updateDownPaymentRange();
         updateValues();

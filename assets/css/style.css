@@ -691,7 +691,7 @@ a:hover {
   color: #001f5c;
 }
 .upfrontButton {
-  border: 2px solid #001f5c;
+  border: 1px solid #001f5c;
   color: #001f5c;
   background-color: transparent;
   padding: 10px 30px;
@@ -718,7 +718,7 @@ a:hover {
 }
 .active-btn {
   background-color: #f1ebff;
-  border: 2px solid #6f42c1;
+  border: 2px solid #6f42c1 !important;
   color: #6f42c1;
 }
 .btn-status {
@@ -741,9 +741,24 @@ a:hover {
     padding: 8px;
   }
 }
+.slider-input {
+  margin-bottom: -14px;
+  padding: 10px;
+}
 .section3-rightgrid {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+.custom-slider::-webkit-slider-thumb {
+  background: #6f42c1;
+}
+
+.custom-slider::-moz-range-thumb {
+  background: #6f42c1;
+}
+
+.custom-slider::-ms-thumb {
+  background: #6f42c1;
 }
